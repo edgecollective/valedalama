@@ -1,0 +1,314 @@
+EESchema-LIBRARY Version 2.4
+#encoding utf-8
+#
+# Connector_Conn_01x01_Female
+#
+DEF Connector_Conn_01x01_Female J 0 40 Y N 1 F N
+F0 "J" 0 100 50 H V C CNN
+F1 "Connector_Conn_01x01_Female" 0 -100 50 H V C CNN
+F2 "" 0 0 50 H I C CNN
+F3 "" 0 0 50 H I C CNN
+$FPLIST
+ Connector*:*
+$ENDFPLIST
+DRAW
+A 0 0 20 901 -901 1 1 6 N 0 20 0 -20
+P 2 1 1 6 -50 0 -20 0 N
+X Pin_1 1 -200 0 150 R 50 50 1 1 P
+ENDDRAW
+ENDDEF
+#
+# Connector_Conn_01x02_Female
+#
+DEF Connector_Conn_01x02_Female J 0 40 Y N 1 F N
+F0 "J" 0 100 50 H V C CNN
+F1 "Connector_Conn_01x02_Female" 0 -200 50 H V C CNN
+F2 "" 0 0 50 H I C CNN
+F3 "" 0 0 50 H I C CNN
+$FPLIST
+ Connector*:*_1x??_*
+$ENDFPLIST
+DRAW
+A 0 -100 20 901 -901 1 1 6 N 0 -80 0 -120
+A 0 0 20 901 -901 1 1 6 N 0 20 0 -20
+P 2 1 1 6 -50 -100 -20 -100 N
+P 2 1 1 6 -50 0 -20 0 N
+X Pin_1 1 -200 0 150 R 50 50 1 1 P
+X Pin_2 2 -200 -100 150 R 50 50 1 1 P
+ENDDRAW
+ENDDEF
+#
+# Connector_Screw_Terminal_01x02
+#
+DEF Connector_Screw_Terminal_01x02 J 0 40 Y N 1 F N
+F0 "J" 0 100 50 H V C CNN
+F1 "Connector_Screw_Terminal_01x02" 0 -200 50 H V C CNN
+F2 "" 0 0 50 H I C CNN
+F3 "" 0 0 50 H I C CNN
+$FPLIST
+ TerminalBlock*:*
+$ENDFPLIST
+DRAW
+C 0 -100 25 1 1 6 N
+C 0 0 25 1 1 6 N
+S -50 50 50 -150 1 1 10 f
+P 2 1 1 6 -21 -87 13 -120 N
+P 2 1 1 6 -21 13 13 -20 N
+P 2 1 1 6 -14 -80 20 -113 N
+P 2 1 1 6 -14 20 20 -13 N
+X Pin_1 1 -200 0 150 R 50 50 1 1 P
+X Pin_2 2 -200 -100 150 R 50 50 1 1 P
+ENDDRAW
+ENDDEF
+#
+# Connector_Screw_Terminal_01x03
+#
+DEF Connector_Screw_Terminal_01x03 J 0 40 Y N 1 F N
+F0 "J" 0 200 50 H V C CNN
+F1 "Connector_Screw_Terminal_01x03" 0 -200 50 H V C CNN
+F2 "" 0 0 50 H I C CNN
+F3 "" 0 0 50 H I C CNN
+$FPLIST
+ TerminalBlock*:*
+$ENDFPLIST
+DRAW
+C 0 -100 25 1 1 6 N
+C 0 0 25 1 1 6 N
+C 0 100 25 1 1 6 N
+S -50 150 50 -150 1 1 10 f
+P 2 1 1 6 -21 -87 13 -120 N
+P 2 1 1 6 -21 13 13 -20 N
+P 2 1 1 6 -21 113 13 80 N
+P 2 1 1 6 -14 -80 20 -113 N
+P 2 1 1 6 -14 20 20 -13 N
+P 2 1 1 6 -14 120 20 87 N
+X Pin_1 1 -200 100 150 R 50 50 1 1 P
+X Pin_2 2 -200 0 150 R 50 50 1 1 P
+X Pin_3 3 -200 -100 150 R 50 50 1 1 P
+ENDDRAW
+ENDDEF
+#
+# Device_Q_NPN_EBC
+#
+DEF Device_Q_NPN_EBC Q 0 0 Y N 1 F N
+F0 "Q" 200 50 50 H V L CNN
+F1 "Device_Q_NPN_EBC" 200 -50 50 H V L CNN
+F2 "" 200 100 50 H I C CNN
+F3 "" 0 0 50 H I C CNN
+DRAW
+C 50 0 111 0 1 10 N
+P 2 0 1 0 25 25 100 100 N
+P 3 0 1 0 25 -25 100 -100 100 -100 N
+P 3 0 1 20 25 75 25 -75 25 -75 N
+P 5 0 1 0 50 -70 70 -50 90 -90 50 -70 50 -70 F
+X E 1 100 -200 100 U 50 50 1 1 P
+X B 2 -200 0 225 R 50 50 1 1 P
+X C 3 100 200 100 D 50 50 1 1 P
+ENDDRAW
+ENDDEF
+#
+# Device_Q_PNP_BCE
+#
+DEF Device_Q_PNP_BCE Q 0 0 Y N 1 F N
+F0 "Q" 200 50 50 H V L CNN
+F1 "Device_Q_PNP_BCE" 200 -50 50 H V L CNN
+F2 "" 200 100 50 H I C CNN
+F3 "" 0 0 50 H I C CNN
+DRAW
+C 50 0 111 0 1 10 N
+P 2 0 1 0 25 25 100 100 N
+P 3 0 1 0 25 -25 100 -100 100 -100 N
+P 3 0 1 20 25 75 25 -75 25 -75 N
+P 5 0 1 0 90 -70 70 -90 50 -50 90 -70 90 -70 F
+X B 1 -200 0 225 R 50 50 1 1 I
+X C 2 100 200 100 D 50 50 1 1 P
+X E 3 100 -200 100 U 50 50 1 1 P
+ENDDRAW
+ENDDEF
+#
+# Device_R
+#
+DEF Device_R R 0 0 N Y 1 F N
+F0 "R" 80 0 50 V V C CNN
+F1 "Device_R" 0 0 50 V V C CNN
+F2 "" -70 0 50 V I C CNN
+F3 "" 0 0 50 H I C CNN
+$FPLIST
+ R_*
+$ENDFPLIST
+DRAW
+S -40 -100 40 100 0 1 10 N
+X ~ 1 0 150 50 D 50 50 1 1 P
+X ~ 2 0 -150 50 U 50 50 1 1 P
+ENDDRAW
+ENDDEF
+#
+# Mechanical_MountingHole
+#
+DEF Mechanical_MountingHole H 0 40 Y Y 1 F N
+F0 "H" 0 200 50 H V C CNN
+F1 "Mechanical_MountingHole" 0 125 50 H V C CNN
+F2 "" 0 0 50 H I C CNN
+F3 "" 0 0 50 H I C CNN
+$FPLIST
+ MountingHole*
+$ENDFPLIST
+DRAW
+C 0 0 50 0 1 50 N
+ENDDRAW
+ENDDEF
+#
+# ib4-eagle-import_+3V3
+#
+DEF ib4-eagle-import_+3V3 #+3V3 0 40 Y Y 1 L P
+F0 "#+3V3" 0 0 50 H I C CNN
+F1 "ib4-eagle-import_+3V3" -100 -200 59 V V L BNN
+F2 "" 0 0 50 H I C CNN
+F3 "" 0 0 50 H I C CNN
+DRAW
+P 2 1 0 0 0 0 -50 -75 N
+P 2 1 0 0 50 -75 0 0 N
+X +3V3 1 0 -100 100 U 0 0 1 0 W
+ENDDRAW
+ENDDEF
+#
+# ib4-eagle-import_GND
+#
+DEF ib4-eagle-import_GND #GND 0 40 Y Y 1 L P
+F0 "#GND" 0 0 50 H I C CNN
+F1 "ib4-eagle-import_GND" -100 -100 59 H V L BNN
+F2 "" 0 0 50 H I C CNN
+F3 "" 0 0 50 H I C CNN
+DRAW
+P 2 1 0 0 -75 0 75 0 N
+X GND 1 0 100 100 D 0 0 1 0 W
+ENDDRAW
+ENDDEF
+#
+# ib4-eagle-import_HEADER-1X14
+#
+DEF ib4-eagle-import_HEADER-1X14 JP 0 40 Y Y 1 L N
+F0 "JP" -250 825 59 H V L BNN
+F1 "ib4-eagle-import_HEADER-1X14" -250 -800 59 H V L BNN
+F2 "" 0 0 50 H I C CNN
+F3 "" 0 0 50 H I C CNN
+DRAW
+P 2 1 0 0 -250 -700 50 -700 N
+P 2 1 0 0 -250 800 -250 -700 N
+P 2 1 0 0 50 -700 50 800 N
+P 2 1 0 0 50 800 -250 800 N
+X 1 1 -100 700 100 R 50 0 1 0 P I
+X 10 10 -100 -200 100 R 50 0 1 0 P I
+X 11 11 -100 -300 100 R 50 0 1 0 P I
+X 12 12 -100 -400 100 R 50 0 1 0 P I
+X 13 13 -100 -500 100 R 50 0 1 0 P I
+X 14 14 -100 -600 100 R 50 0 1 0 P I
+X 2 2 -100 600 100 R 50 0 1 0 P I
+X 3 3 -100 500 100 R 50 0 1 0 P I
+X 4 4 -100 400 100 R 50 0 1 0 P I
+X 5 5 -100 300 100 R 50 0 1 0 P I
+X 6 6 -100 200 100 R 50 0 1 0 P I
+X 7 7 -100 100 100 R 50 0 1 0 P I
+X 8 8 -100 0 100 R 50 0 1 0 P I
+X 9 9 -100 -100 100 R 50 0 1 0 P I
+ENDDRAW
+ENDDEF
+#
+# ib4-eagle-import_VBAT
+#
+DEF ib4-eagle-import_VBAT ~ 0 40 Y Y 1 L P
+F0 "" 0 0 50 H I C CNN
+F1 "ib4-eagle-import_VBAT" -60 40 42 H V L BNN
+F2 "" 0 0 50 H I C CNN
+F3 "" 0 0 50 H I C CNN
+DRAW
+P 2 1 0 0 -50 -50 0 0 N
+P 2 1 0 0 0 0 50 -50 N
+X VBAT 1 0 -100 100 U 0 0 1 0 W
+ENDDRAW
+ENDDEF
+#
+# ib4-eagle-import_VBUS
+#
+DEF ib4-eagle-import_VBUS ~ 0 40 Y Y 1 L P
+F0 "" 0 0 50 H I C CNN
+F1 "ib4-eagle-import_VBUS" -60 40 42 H V L BNN
+F2 "" 0 0 50 H I C CNN
+F3 "" 0 0 50 H I C CNN
+DRAW
+P 2 1 0 0 -50 -50 0 0 N
+P 2 1 0 0 0 0 50 -50 N
+X VBUS 1 0 -100 100 U 0 0 1 0 W
+ENDDRAW
+ENDDEF
+#
+# power_GND
+#
+DEF power_GND #PWR 0 0 Y Y 1 F P
+F0 "#PWR" 0 -250 50 H I C CNN
+F1 "power_GND" 0 -150 50 H V C CNN
+F2 "" 0 0 50 H I C CNN
+F3 "" 0 0 50 H I C CNN
+DRAW
+P 6 0 1 0 0 0 0 -50 50 -50 0 -100 -50 -50 0 -50 N
+X GND 1 0 0 0 D 50 50 1 1 W N
+ENDDRAW
+ENDDEF
+#
+# symbols_lora_breakout
+#
+DEF symbols_lora_breakout U 0 40 Y Y 1 F N
+F0 "U" 100 50 50 H V C CNN
+F1 "symbols_lora_breakout" 50 1150 50 H V C CNN
+F2 "" 0 0 50 H I C CNN
+F3 "" 0 0 50 H I C CNN
+DRAW
+S 0 1100 700 100 0 1 0 N
+X VIN 1 -100 1000 100 R 50 50 1 1 I
+X GND 2 -100 900 100 R 50 50 1 1 I
+X EN 3 -100 800 100 R 50 50 1 1 I
+X G0 4 -100 700 100 R 50 50 1 1 I
+X SCK 5 -100 600 100 R 50 50 1 1 I
+X MISO 6 -100 500 100 R 50 50 1 1 I
+X MOSI 7 -100 400 100 R 50 50 1 1 I
+X CS 8 -100 300 100 R 50 50 1 1 I
+X RST 9 -100 200 100 R 50 50 1 1 I
+ENDDRAW
+ENDDEF
+#
+# symbols_powerboost500
+#
+DEF symbols_powerboost500 U 0 40 Y Y 1 F N
+F0 "U" 0 650 50 H V C CNN
+F1 "symbols_powerboost500" 0 -100 50 H V C CNN
+F2 "" 0 0 50 H I C CNN
+F3 "" 0 0 50 H I C CNN
+DRAW
+S -100 -50 550 550 0 1 0 N
+X 5V 1 -200 500 100 R 50 50 1 1 I
+X GND 2 -200 400 100 R 50 50 1 1 I
+X LB 3 -200 300 100 R 50 50 1 1 I
+X EN 4 -200 200 100 R 50 50 1 1 I
+X GND 5 -200 100 100 R 50 50 1 1 I
+X BAT 6 -200 0 100 R 50 50 1 1 I
+ENDDRAW
+ENDDEF
+#
+# symbols_tpl5110
+#
+DEF symbols_tpl5110 U 0 40 Y Y 1 F N
+F0 "U" 0 0 50 H V C CNN
+F1 "symbols_tpl5110" 50 750 50 H V C CNN
+F2 "" 0 0 50 H I C CNN
+F3 "" 0 0 50 H I C CNN
+DRAW
+S -100 600 450 100 0 1 0 N
+X VDD 1 -200 550 100 R 50 50 1 1 I
+X GND 2 -200 450 100 R 50 50 1 1 I
+X DELAY 3 -200 350 100 R 50 50 1 1 I
+X DRV 4 -200 250 100 R 50 50 1 1 I
+X DONE 5 -200 150 100 R 50 50 1 1 I
+ENDDRAW
+ENDDEF
+#
+#End Library
