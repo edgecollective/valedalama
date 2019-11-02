@@ -1,0 +1,296 @@
+EESchema-LIBRARY Version 2.4
+#encoding utf-8
+#
+# knuth-gateway-rescue_+BATT-power
+#
+DEF knuth-gateway-rescue_+BATT-power #PWR 0 0 Y Y 1 F P
+F0 "#PWR" 0 -150 50 H I C CNN
+F1 "knuth-gateway-rescue_+BATT-power" 0 140 50 H V C CNN
+F2 "" 0 0 50 H I C CNN
+F3 "" 0 0 50 H I C CNN
+DRAW
+P 2 0 1 0 -30 50 0 100 N
+P 2 0 1 0 0 0 0 100 N
+P 2 0 1 0 0 100 30 50 N
+X +BATT 1 0 0 0 U 50 50 1 1 W N
+ENDDRAW
+ENDDEF
+#
+# knuth-gateway-rescue_Conn_01x02_Female-Connector
+#
+DEF knuth-gateway-rescue_Conn_01x02_Female-Connector J 0 40 Y N 1 F N
+F0 "J" 0 100 50 H V C CNN
+F1 "knuth-gateway-rescue_Conn_01x02_Female-Connector" 0 -200 50 H V C CNN
+F2 "" 0 0 50 H I C CNN
+F3 "" 0 0 50 H I C CNN
+$FPLIST
+ Connector*:*_??x*mm*
+ Connector*:*1x??x*mm*
+ Socket?Strip?Straight?1X*
+ Socket?Strip?Angled?1X*
+$ENDFPLIST
+DRAW
+A 0 -100 20 901 -901 1 1 6 N 0 -80 0 -120
+A 0 0 20 901 -901 1 1 6 N 0 20 0 -20
+P 2 1 1 6 -50 -100 -20 -100 N
+P 2 1 1 6 -50 0 -20 0 N
+X Pin_1 1 -200 0 150 R 50 50 1 1 P
+X Pin_2 2 -200 -100 150 R 50 50 1 1 P
+ENDDRAW
+ENDDEF
+#
+# knuth-gateway-rescue_Conn_01x16_Female-Connector
+#
+DEF knuth-gateway-rescue_Conn_01x16_Female-Connector J 0 40 Y N 1 F N
+F0 "J" 0 800 50 H V C CNN
+F1 "knuth-gateway-rescue_Conn_01x16_Female-Connector" 0 -900 50 H V C CNN
+F2 "" 0 0 50 H I C CNN
+F3 "" 0 0 50 H I C CNN
+$FPLIST
+ Connector*:*_??x*mm*
+ Connector*:*1x??x*mm*
+ Socket?Strip?Straight?1X*
+ Socket?Strip?Angled?1X*
+$ENDFPLIST
+DRAW
+A 0 -800 20 901 -901 1 1 6 N 0 -780 0 -820
+A 0 -700 20 901 -901 1 1 6 N 0 -680 0 -720
+A 0 -600 20 901 -901 1 1 6 N 0 -580 0 -620
+A 0 -500 20 901 -901 1 1 6 N 0 -480 0 -520
+A 0 -400 20 901 -901 1 1 6 N 0 -380 0 -420
+A 0 -300 20 901 -901 1 1 6 N 0 -280 0 -320
+A 0 -200 20 901 -901 1 1 6 N 0 -180 0 -220
+A 0 -100 20 901 -901 1 1 6 N 0 -80 0 -120
+A 0 0 20 901 -901 1 1 6 N 0 20 0 -20
+A 0 100 20 901 -901 1 1 6 N 0 120 0 80
+A 0 200 20 901 -901 1 1 6 N 0 220 0 180
+A 0 300 20 901 -901 1 1 6 N 0 320 0 280
+A 0 400 20 901 -901 1 1 6 N 0 420 0 380
+A 0 500 20 901 -901 1 1 6 N 0 520 0 480
+A 0 600 20 901 -901 1 1 6 N 0 620 0 580
+A 0 700 20 901 -901 1 1 6 N 0 720 0 680
+P 2 1 1 6 -50 -800 -20 -800 N
+P 2 1 1 6 -50 -700 -20 -700 N
+P 2 1 1 6 -50 -600 -20 -600 N
+P 2 1 1 6 -50 -500 -20 -500 N
+P 2 1 1 6 -50 -400 -20 -400 N
+P 2 1 1 6 -50 -300 -20 -300 N
+P 2 1 1 6 -50 -200 -20 -200 N
+P 2 1 1 6 -50 -100 -20 -100 N
+P 2 1 1 6 -50 0 -20 0 N
+P 2 1 1 6 -50 100 -20 100 N
+P 2 1 1 6 -50 200 -20 200 N
+P 2 1 1 6 -50 300 -20 300 N
+P 2 1 1 6 -50 400 -20 400 N
+P 2 1 1 6 -50 500 -20 500 N
+P 2 1 1 6 -50 600 -20 600 N
+P 2 1 1 6 -50 700 -20 700 N
+X Pin_1 1 -200 700 150 R 50 50 1 1 P
+X Pin_10 10 -200 -200 150 R 50 50 1 1 P
+X Pin_11 11 -200 -300 150 R 50 50 1 1 P
+X Pin_12 12 -200 -400 150 R 50 50 1 1 P
+X Pin_13 13 -200 -500 150 R 50 50 1 1 P
+X Pin_14 14 -200 -600 150 R 50 50 1 1 P
+X Pin_15 15 -200 -700 150 R 50 50 1 1 P
+X Pin_16 16 -200 -800 150 R 50 50 1 1 P
+X Pin_2 2 -200 600 150 R 50 50 1 1 P
+X Pin_3 3 -200 500 150 R 50 50 1 1 P
+X Pin_4 4 -200 400 150 R 50 50 1 1 P
+X Pin_5 5 -200 300 150 R 50 50 1 1 P
+X Pin_6 6 -200 200 150 R 50 50 1 1 P
+X Pin_7 7 -200 100 150 R 50 50 1 1 P
+X Pin_8 8 -200 0 150 R 50 50 1 1 P
+X Pin_9 9 -200 -100 150 R 50 50 1 1 P
+ENDDRAW
+ENDDEF
+#
+# knuth-gateway-rescue_GND-power
+#
+DEF knuth-gateway-rescue_GND-power #PWR 0 0 Y Y 1 F P
+F0 "#PWR" 0 -250 50 H I C CNN
+F1 "knuth-gateway-rescue_GND-power" 0 -150 50 H V C CNN
+F2 "" 0 0 50 H I C CNN
+F3 "" 0 0 50 H I C CNN
+DRAW
+P 6 0 1 0 0 0 0 -50 50 -50 0 -100 -50 -50 0 -50 N
+X GND 1 0 0 0 D 50 50 1 1 W N
+ENDDRAW
+ENDDEF
+#
+# knuth-gateway-rescue_Q_NPN_EBC-Device
+#
+DEF knuth-gateway-rescue_Q_NPN_EBC-Device Q 0 0 Y N 1 F N
+F0 "Q" 200 50 50 H V L CNN
+F1 "knuth-gateway-rescue_Q_NPN_EBC-Device" 200 -50 50 H V L CNN
+F2 "" 200 100 50 H I C CNN
+F3 "" 0 0 50 H I C CNN
+DRAW
+C 50 0 111 0 1 10 N
+P 2 0 1 0 25 25 100 100 N
+P 3 0 1 0 25 -25 100 -100 100 -100 N
+P 3 0 1 20 25 75 25 -75 25 -75 N
+P 5 0 1 0 50 -70 70 -50 90 -90 50 -70 50 -70 F
+X E 1 100 -200 100 U 50 50 1 1 P
+X B 2 -200 0 225 R 50 50 1 1 P
+X C 3 100 200 100 D 50 50 1 1 P
+ENDDRAW
+ENDDEF
+#
+# knuth-gateway-rescue_Q_PNP_BCE-device
+#
+DEF knuth-gateway-rescue_Q_PNP_BCE-device Q 0 0 Y N 1 F N
+F0 "Q" 200 50 50 H V L CNN
+F1 "knuth-gateway-rescue_Q_PNP_BCE-device" 200 -50 50 H V L CNN
+F2 "" 200 100 50 H I C CNN
+F3 "" 0 0 50 H I C CNN
+DRAW
+C 50 0 111 0 1 10 N
+P 2 0 1 0 25 25 100 100 N
+P 3 0 1 0 25 -25 100 -100 100 -100 N
+P 3 0 1 20 25 75 25 -75 25 -75 N
+P 5 0 1 0 90 -70 70 -90 50 -50 90 -70 90 -70 F
+X B 1 -200 0 225 R 50 50 1 1 I
+X C 2 100 200 100 D 50 50 1 1 P
+X E 3 100 -200 100 U 50 50 1 1 P
+ENDDRAW
+ENDDEF
+#
+# knuth-gateway-rescue_R-Device
+#
+DEF knuth-gateway-rescue_R-Device R 0 0 N Y 1 F N
+F0 "R" 80 0 50 V V C CNN
+F1 "knuth-gateway-rescue_R-Device" 0 0 50 V V C CNN
+F2 "" -70 0 50 V I C CNN
+F3 "" 0 0 50 H I C CNN
+$FPLIST
+ R_*
+$ENDFPLIST
+DRAW
+S -40 -100 40 100 0 1 10 N
+X ~ 1 0 150 50 D 50 50 1 1 P
+X ~ 2 0 -150 50 U 50 50 1 1 P
+ENDDRAW
+ENDDEF
+#
+# knuth_CUI_5V_SWITCHING
+#
+DEF knuth_CUI_5V_SWITCHING U 0 40 Y Y 1 F N
+F0 "U" -200 -300 50 H V C CNN
+F1 "knuth_CUI_5V_SWITCHING" -150 300 50 H V C CNN
+F2 "" 0 0 50 H I C CNN
+F3 "" 0 0 50 H I C CNN
+DRAW
+S -100 200 -350 -200 0 1 0 N
+X VIN 1 0 100 100 L 50 50 1 1 I
+X GND 2 0 0 100 L 50 50 1 1 I
+X VOUT 3 0 -100 100 L 50 50 1 1 I
+ENDDRAW
+ENDDEF
+#
+# knuth_Q_RHS
+#
+DEF knuth_Q_RHS U 0 40 Y Y 1 F N
+F0 "U" -100 -650 50 H V C CNN
+F1 "knuth_Q_RHS" -100 1200 50 H V C CNN
+F2 "" 0 0 50 H I C CNN
+F3 "" 0 0 50 H I C CNN
+DRAW
+S 0 1100 -250 -550 0 1 0 N
+X VIN 1 100 -500 100 L 50 50 1 1 I
+X 18 10 100 400 100 L 50 50 1 1 I
+X 19 11 100 500 100 L 50 50 1 1 I
+X 21 12 100 600 100 L 50 50 1 1 I
+X 22 13 100 700 100 L 50 50 1 1 I
+X 23 14 100 800 100 L 50 50 1 1 I
+X 35 15 100 900 100 L 50 50 1 1 I
+X RST 16 100 1000 100 L 50 50 1 1 I
+X 5V 2 100 -400 100 L 50 50 1 1 I
+X 3v3 3 100 -300 100 L 50 50 1 1 I
+X 2 4 100 -200 100 L 50 50 1 1 I
+X 12 5 100 -100 100 L 50 50 1 1 I
+X 14 6 100 0 100 L 50 50 1 1 I
+X GND 7 100 100 100 L 50 50 1 1 I
+X 0 8 100 200 100 L 50 50 1 1 I
+X 5 9 100 300 100 L 50 50 1 1 I
+ENDDRAW
+ENDDEF
+#
+# knuth_adasolarlipo
+#
+DEF knuth_adasolarlipo U 0 40 Y Y 1 F N
+F0 "U" -100 -450 50 H V C CNN
+F1 "knuth_adasolarlipo" -100 300 50 H V C CNN
+F2 "" 0 0 50 H I C CNN
+F3 "" 0 0 50 H I C CNN
+DRAW
+S 0 200 -350 -300 0 1 0 N
+X B+ 1 100 100 100 L 50 50 1 1 I
+X GND 2 100 0 100 L 50 50 1 1 I
+X DCIN+ 3 100 -100 100 L 50 50 1 1 I
+X DCIN- 4 100 -200 100 L 50 50 1 1 I
+ENDDRAW
+ENDDEF
+#
+# knuth_powerboost_1000
+#
+DEF knuth_powerboost_1000 U 0 40 Y Y 1 F N
+F0 "U" 150 600 50 H V C CNN
+F1 "knuth_powerboost_1000" 100 -500 50 H V C CNN
+F2 "" 0 0 50 H I C CNN
+F3 "" 0 0 50 H I C CNN
+DRAW
+S -50 500 350 -400 0 1 0 N
+X USB 1 -150 400 100 R 50 50 1 1 I
+X Bat 2 -150 300 100 R 50 50 1 1 I
+X Vs 3 -150 200 100 R 50 50 1 1 I
+X EN 4 -150 100 100 R 50 50 1 1 I
+X GND 5 -150 0 100 R 50 50 1 1 I
+X LBO 6 -150 -100 100 R 50 50 1 1 I
+X GND 7 -150 -200 100 R 50 50 1 1 I
+X 5V 8 -150 -300 100 R 50 50 1 1 I
+ENDDRAW
+ENDDEF
+#
+# knuth_sim800
+#
+DEF knuth_sim800 U 0 40 Y Y 1 F N
+F0 "U" 50 850 50 H V C CNN
+F1 "knuth_sim800" 100 50 50 H V C CNN
+F2 "" -250 250 50 H I C CNN
+F3 "" -250 250 50 H I C CNN
+DRAW
+S -350 750 350 -650 0 1 0 N
+X Bat 1 -450 650 100 R 50 50 1 1 I
+X TX 10 -450 -250 100 R 50 50 1 1 I
+X RX 11 -450 -350 100 R 50 50 1 1 I
+X NS 12 -450 -450 100 R 50 50 1 1 I
+X VIO 13 -450 -550 100 R 50 50 1 1 I
+X GND 2 -450 550 100 R 50 50 1 1 I
+X SPKR+ 3 -450 450 100 R 50 50 1 1 I
+X SPKR- 4 -450 350 100 R 50 50 1 1 I
+X PWR 5 -450 250 100 R 50 50 1 1 I
+X Rst 6 -450 150 100 R 50 50 1 1 I
+X RS 7 -450 50 100 R 50 50 1 1 I
+X Key 8 -450 -50 100 R 50 50 1 1 I
+X RI 9 -450 -150 100 R 50 50 1 1 I
+ENDDRAW
+ENDDEF
+#
+# knuth_tpl5110
+#
+DEF knuth_tpl5110 U 0 40 Y Y 1 F N
+F0 "U" -300 -450 50 H V C CNN
+F1 "knuth_tpl5110" -300 250 50 H V C CNN
+F2 "" 0 0 50 H I C CNN
+F3 "" 0 0 50 H I C CNN
+DRAW
+S -100 200 -500 -400 0 1 0 N
+X VDD 1 0 100 100 L 50 50 1 1 I
+X GND 2 0 0 100 L 50 50 1 1 I
+X Delay 3 0 -100 100 L 50 50 1 1 I
+X DRV 4 0 -200 100 L 50 50 1 1 I
+X Done 5 0 -300 100 L 50 50 1 1 I
+ENDDRAW
+ENDDEF
+#
+#End Library

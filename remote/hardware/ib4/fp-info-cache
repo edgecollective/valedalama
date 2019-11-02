@@ -72971,58 +72971,55 @@ ib4
 PCBFEAT-REV-040
 <b>Revision Level Field</b> - 40 mil<p>
 Set version with global board attribute '>REV'
-
+0
 0
 0
 0
 ib4
 SOD-123FL
 
-
+0
 0
 2
 2
 ib4
 SOLDERJUMPER_CLOSEDWIRE
 
-
+0
 0
 3
 3
 ib4
 SOT23-5
 <b>Small Outline Transistor</b><p>
-SOT753 - Philips Semiconductors<br>
-Source: http://www.semiconductors.philips.com/acrobat_download/datasheets/74HC_HCT1G66_3.pdf
-
+0
+0
+0
 0
 5
 5
 ib4
-TQFN48_7MM
-
-
+0
+0
+0
 0
 49
 49
 ib4
-USON8
-
-
+0
+0
+0
 0
 8
 8
 ib4
-_0603MP
-<b>0603 MicroPitch</b>
-
+0
+0
+0
 0
 2
 2
 ib4
-_0805MP
-<b>0805 MicroPitch</b>
-
 0
-2
-2
+0
+0

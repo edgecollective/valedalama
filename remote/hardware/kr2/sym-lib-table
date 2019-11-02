@@ -1,0 +1,4 @@
+(sym_lib_table
+  (lib (name knuth)(type Legacy)(uri /home/dwblair/gitwork/knuth-soil-remote/gateway/knuth-gateway/knuth.lib)(options "")(descr ""))
+  (lib (name knuth-gateway-rescue)(type Legacy)(uri ${KIPRJMOD}/knuth-gateway-rescue.lib)(options "")(descr ""))
+)
