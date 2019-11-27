@@ -5,6 +5,12 @@ import time
 import adafruit_rfm9x
 import gc
 import microcontroller
+from analogio import AnalogIn
+
+analog_in = AnalogIn(board.A1)
+
+def get_voltage(pin):
+    return (pin.value * 3.3) / 65536
 
 # lora radio
 spi = busio.SPI(board.SCK, MOSI=board.MOSI, MISO=board.MISO)
@@ -21,26 +27,12 @@ done = digitalio.DigitalInOut(board.D7)
 done.direction = digitalio.Direction.OUTPUT
 #done.value = False
 
+reading=float(get_voltage(analog_in))
 
-index=0
+sendstr=str(reading)
+print(sendstr)
+rfm9x.send(sendstr)
 
-while True:
-    
-
-    time.sleep(3)
-
-    for i in range(0,5):
-        led.value=True
-        time.sleep(.1)
-        led.value=False
-        time.sleep(.1)
-
-    sendstr=str(microcontroller.cpu.temperature)
-    print(sendstr)
-    rfm9x.send(sendstr)
-
-    index=index+1
-
-    done.value = False
-    done.value=True
+done.value = False
+done.value=True
 

@@ -1,0 +1,18 @@
+
+
+
+todo:  
+
+- breadboard the decagon circuit again
+- make an analog breakout for the vegetronix
+
+
+
+one remote node is: vegetronix + decagon (because requires boost)
+which gives two soil moisture sensors and a temp
+
+another remote node is:  two temp probes at different depths
+this can be tiny
+could even just run on AA batteries maybe
+
+

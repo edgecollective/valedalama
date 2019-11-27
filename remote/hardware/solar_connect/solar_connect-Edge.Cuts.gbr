@@ -1,0 +1,26 @@
+G04 #@! TF.GenerationSoftware,KiCad,Pcbnew,5.0.2-bee76a0~70~ubuntu18.04.1*
+G04 #@! TF.CreationDate,2019-11-03T17:39:26-05:00*
+G04 #@! TF.ProjectId,solar_connect,736f6c61-725f-4636-9f6e-6e6563742e6b,rev?*
+G04 #@! TF.SameCoordinates,PX26c1e00PY3c50eb0*
+G04 #@! TF.FileFunction,Profile,NP*
+%FSLAX46Y46*%
+G04 Gerber Fmt 4.6, Leading zero omitted, Abs format (unit mm)*
+G04 Created by KiCad (PCBNEW 5.0.2-bee76a0~70~ubuntu18.04.1) date Sun 03 Nov 2019 05:39:26 PM EST*
+%MOMM*%
+%LPD*%
+G01*
+G04 APERTURE LIST*
+%ADD10C,0.150000*%
+G04 APERTURE END LIST*
+D10*
+X0Y0D02*
+X0Y1778000D01*
+X29464000Y0D02*
+X0Y0D01*
+X29464000Y18796000D02*
+X29464000Y0D01*
+X0Y18796000D02*
+X29464000Y18796000D01*
+X0Y1778000D02*
+X0Y18796000D01*
+M02*

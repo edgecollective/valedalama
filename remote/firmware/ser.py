@@ -10,6 +10,9 @@ dec_switch.direction=digitalio.Direction.OUTPUT
 dec_switch.value=False
 
 while True:
+
+
+
     data = uart.read(32)
 
     dec_switch.value=True
@@ -18,7 +21,7 @@ while True:
         print(data)
         data_string=''.join([chr(b) for b in data])
         raw_string=data_string.split(' ')
-
+        print(raw_string)
         # dielectric
         e_raw=''.join(ch for ch in raw_string[0] if ch.isdigit())
 
@@ -52,6 +55,7 @@ while True:
 
     else:
         print("None")
+    time.sleep(2)
     dec_switch.value=False
     time.sleep(1)
 

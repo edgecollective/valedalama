@@ -2,7 +2,7 @@
 
   (general
     (thickness 1.6)
-    (drawings 6)
+    (drawings 4)
     (tracks 203)
     (zones 0)
     (modules 14)
@@ -746,9 +746,7 @@
   )
 
   (gr_line (start 0 0) (end 96 0) (layer Edge.Cuts) (width 0.05) (tstamp 5DBCCB1B))
-  (gr_line (start 96.95 1.6) (end 96.95 0) (layer Edge.Cuts) (width 0.05))
   (gr_line (start 0 0) (end 0 77) (layer Edge.Cuts) (width 0.05))
-  (gr_line (start 31.65 18.95) (end 32.4 18.95) (layer Edge.Cuts) (width 0.05) (tstamp 5DBCC775))
   (gr_line (start 96 77) (end 0 77) (layer Edge.Cuts) (width 0.05))
   (gr_line (start 96 0) (end 96 77) (layer Edge.Cuts) (width 0.05))
 
