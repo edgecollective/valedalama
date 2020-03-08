@@ -1,0 +1,12 @@
+installing bossa arduino branch on pi, needed:
+
+sudo apt-get install gcc-arm-none-eabi
+
+see:
+
+https://github.com/travisgoodspeed/md380tools/issues/103
+
+maybe also need to upgrade wxwidgets to 3.0?
+https://www.raspberrypi.org/forums/viewtopic.php?t=135703
+
+
