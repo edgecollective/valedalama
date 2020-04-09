@@ -22,9 +22,10 @@ WIFI_PASS=secrets['password']
 farmos_pubkey=secrets['farmos_pubkey']
 farmos_privkey=secrets['farmos_privkey']
 
-base_url= "https://edgecollective.farmos.net/farm/sensor/listener/"
+#base_url= "https://edgecollective.farmos.net/farm/sensor/listener/"
+#JSON_POST_URL = base_url+farmos_pubkey+"?private_key="+farmos_privkey
 
-JSON_POST_URL = base_url+farmos_pubkey+"?private_key="+farmos_privkey
+JSON_POST_URL = "http://192.168.1.192:8200/api/user"
 
 # esp32
 
@@ -65,7 +66,7 @@ while True:
     g_pressure = bme280.pressure
 
     print(g_temp,g_humidity,g_pressure)
-    
+
     try:
 
         json_data = {"temp" : g_temp, "humidity": g_humidity, "pressure":g_pressure}
@@ -74,10 +75,12 @@ while True:
         
         connect(WIFI_ESSID,WIFI_PASS)
         response = requests.post(JSON_POST_URL, json=json_data)
+        print(response.status_code)
+        print(response.content)
         response.close()
 
         print("Done. Sleeping ... ")
-        time.sleep(90)
+        time.sleep(10)
         
     except Exception as e:
         time.sleep(10)
