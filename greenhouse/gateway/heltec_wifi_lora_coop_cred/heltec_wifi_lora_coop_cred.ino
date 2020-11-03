@@ -10,6 +10,7 @@
 #include <RH_RF95.h>
 #include <WiFi.h>
 #include <WiFiMulti.h>
+#include "WiFiConfig.h" // My WiFi configuration.
 
 #include <HTTPClient.h>
 
@@ -21,6 +22,9 @@ WiFiMulti wifiMulti;
 #define RFM95_CS 18
 #define RFM95_RST 14
 #define RFM95_INT 26
+
+String url="http://157.230.188.100:3000/api/drives/6a50886a0c0e6e438607ffb6f53cf03f4497891da0924e5315e3bd45317e2043";
+String authorize="260bbf9f629d24575bb9f9a0e74f490fdd53577642acb3941597ee32f2f7fd92";
 
 
 // Change to 434.0 or other frequency, must match RX's freq!
@@ -63,7 +67,9 @@ u8x8.begin();
         delay(1000);
     }
 
-    wifiMulti.addAP("InmanSquareOasis", "portauprince");
+    //wifiMulti.addAP("InmanSquareOasis", "portauprince");
+
+wifiMulti.addAP(SSID,WiFiPassword);
 
 while (!rf95.init()) {
     Serial.println("LoRa radio init failed");
@@ -140,11 +146,12 @@ serializeJson(updoc, Serial);
 
         USE_SERIAL.print("[HTTP] begin...\n");
         // configure traged server and url
-        //http.begin("https://www.howsmyssl.com/a/check", ca); //HTTPS
-        //http.begin("http://example.com/index.html"); //HTTP
+
         http.begin("http://157.230.188.100:3000/api/drives/6a50886a0c0e6e438607ffb6f53cf03f4497891da0924e5315e3bd45317e2043");
-        
         http.addHeader("Authorization","260bbf9f629d24575bb9f9a0e74f490fdd53577642acb3941597ee32f2f7fd92");
+
+        //http.begin(url);
+        //http.addHeader(authorize);
         
         http.addHeader("Content-Type", "application/json");
         USE_SERIAL.print("[HTTP] GET...\n");
