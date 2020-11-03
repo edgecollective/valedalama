@@ -9,7 +9,7 @@
 #include <SPI.h>
 #include <Wire.h>
 
-#include <RH_RF95.h> //https://cdn-learn.adafruit.com/assets/assets/000/031/670/original/RadioHead-1.59.zip?1460574831
+#include <RH_RF95.h> https://learn.adafruit.com/adafruit-rfm69hcw-and-rfm96-rfm95-rfm98-lora-packet-padio-breakouts/rfm9x-test
 #include <Adafruit_AM2315.h> //https://learn.adafruit.com/am2315-encased-i2c-temperature-humidity-sensor/arduino-code
 #include <ArduinoJson.h> //https://arduinojson.org/v6/doc/installation/
 
