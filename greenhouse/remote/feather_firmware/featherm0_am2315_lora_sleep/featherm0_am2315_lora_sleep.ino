@@ -6,11 +6,11 @@
 // level messaging abilities.
 // It is designed to work with the other example Feather9x_RX
 
-#include <RTCZero.h>
 
 #include <SPI.h>
 #include <Wire.h>
 
+#include <RTCZero.h> //https://github.com/arduino-libraries/RTCZero
 #include <RH_RF95.h> https://learn.adafruit.com/adafruit-rfm69hcw-and-rfm96-rfm95-rfm98-lora-packet-padio-breakouts/rfm9x-test
 #include <Adafruit_AM2315.h> //https://learn.adafruit.com/am2315-encased-i2c-temperature-humidity-sensor/arduino-code
 #include <ArduinoJson.h> //https://arduinojson.org/v6/doc/installation/
@@ -138,6 +138,8 @@ void loop()
   digitalWrite(LED, LOW);
 
   Serial.println("... packet sent.");
+  rf95.sleep();
+  
   }
 
   resetAlarm();  // Reset alarm before returning to sleep
