@@ -10,7 +10,7 @@
 #include <RH_RF95.h>
 #include <WiFi.h>
 #include <WiFiMulti.h>
-#include "WiFiConfig.h" // My WiFi configuration.
+#include "credentials.h" // My WiFi configuration.
 
 #include <HTTPClient.h>
 
@@ -23,9 +23,10 @@ WiFiMulti wifiMulti;
 #define RFM95_RST 14
 #define RFM95_INT 26
 
-String url="http://157.230.188.100:3000/api/drives/6a50886a0c0e6e438607ffb6f53cf03f4497891da0924e5315e3bd45317e2043";
-String authorize="260bbf9f629d24575bb9f9a0e74f490fdd53577642acb3941597ee32f2f7fd92";
-
+/*
+const char* bayou_url = "http://157.230.188.100:3000/api/drives/1a142aee9702045f3049325318f14fab10d24ce3e0c8a387d092759c0594ba5e";
+const char* bayou_privkey = "db84537367d8e9096e93b97cfef3adc11781d90abb56f24d96ee12e7ce899344";
+*/
 
 // Change to 434.0 or other frequency, must match RX's freq!
 #define RF95_FREQ 915.0
@@ -143,12 +144,15 @@ serializeJson(updoc, Serial);
     if((wifiMulti.run() == WL_CONNECTED)) {
 
         HTTPClient http;
+        int httpCode;
+
+// BAYOU -----------------------------------------------
 
         USE_SERIAL.print("[HTTP] begin...\n");
         // configure traged server and url
 
-        http.begin("http://157.230.188.100:3000/api/drives/6a50886a0c0e6e438607ffb6f53cf03f4497891da0924e5315e3bd45317e2043");
-        http.addHeader("Authorization","260bbf9f629d24575bb9f9a0e74f490fdd53577642acb3941597ee32f2f7fd92");
+        http.begin(bayou_url);
+        http.addHeader("Authorization",bayou_privkey);
 
         //http.begin(url);
         //http.addHeader(authorize);
@@ -158,7 +162,7 @@ serializeJson(updoc, Serial);
         // start connection and send HTTP header
         
       
-        int httpCode = http.PUT(json);        
+        httpCode = http.PUT(json);        
 
         // httpCode will be negative on error
         if(httpCode > 0) {
@@ -175,9 +179,47 @@ serializeJson(updoc, Serial);
         }
 
         http.end();
+
+
+        // FarmOS -----------------------------------------------
+
+        USE_SERIAL.print("[HTTP] begin...\n");
+        // configure traged server and url
+
+        http.begin(farmOS_url);
+        //http.addHeader("Authorization",bayou_privkey);
+
+        //http.begin(url);
+        //http.addHeader(authorize);
+        
+        http.addHeader("Content-Type", "application/json");
+        USE_SERIAL.print("[HTTP] GET...\n");
+        // start connection and send HTTP header
+        
+        String output;
+        serializeJson(doc, output);
+        httpCode = http.POST(output);        
+
+        // httpCode will be negative on error
+        if(httpCode > 0) {
+            // HTTP header has been send and Server response header has been handled
+            USE_SERIAL.printf("[HTTP] GET... code: %d\n", httpCode);
+
+            // file found at server
+            if(httpCode == HTTP_CODE_OK) {
+                String payload = http.getString();
+                USE_SERIAL.println(payload);
+            }
+        } else {
+            USE_SERIAL.printf("[HTTP] GET... failed, error: %s\n", http.errorToString(httpCode).c_str());
+        }
+
+        http.end();
+
+        
     }
 
-    delay(60000); // wait a minute until the next post
+    //delay(60000); // wait a minute until the next post
       
     }
 } // end if (rf95.available())
