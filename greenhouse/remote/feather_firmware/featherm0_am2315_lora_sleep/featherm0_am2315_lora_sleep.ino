@@ -39,6 +39,8 @@ RH_RF95 rf95(RFM95_CS, RFM95_INT);
 
 #define LED 13
 
+#define sensorID 22
+
 
 StaticJsonDocument<200> doc;
 
@@ -120,17 +122,18 @@ void loop()
   
   delay(1000); // Wait 1 second between transmits, could also 'sleep' here!
 
+   doc["sensorID"]=sensorID;
    doc["temp"]=temperature;
    doc["humid"]=humidity;
    
-  char radiopacket[40];
+  char radiopacket[60];
   serializeJson(doc, radiopacket);
   
   //itoa(packetnum++, radiopacket+13, 10);
   Serial.print("Sending "); Serial.print(radiopacket); Serial.print(" ...");
   delay(10);
   
-  rf95.send((uint8_t *)radiopacket, 40);
+  rf95.send((uint8_t *)radiopacket, 60);
 
   delay(10);
   digitalWrite(LED, HIGH);

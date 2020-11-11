@@ -1,10 +1,3 @@
-// Feather9x_TX
-// -*- mode: C++ -*-
-// Example sketch showing how to create a simple messaging client (transmitter)
-// with the RH_RF95 class. RH_RF95 class does not provide for addressing or
-// reliability, so you should only use RH_RF95 if you do not need the higher
-// level messaging abilities.
-// It is designed to work with the other example Feather9x_RX
 
 #include <SPI.h>
 #include <Wire.h>
@@ -28,6 +21,9 @@ RH_RF95 rf95(RFM95_CS, RFM95_INT);
 
 #define LED 13
 
+#define sensorID 22
+
+#define delaytime 60000
 
 StaticJsonDocument<200> doc;
 
@@ -98,17 +94,18 @@ void loop()
   
   delay(1000); // Wait 1 second between transmits, could also 'sleep' here!
 
+   doc["sensorID"]=sensorID;
    doc["temp"]=temperature;
    doc["humid"]=humidity;
    
-  char radiopacket[40];
+  char radiopacket[60];
   serializeJson(doc, radiopacket);
   
   //itoa(packetnum++, radiopacket+13, 10);
   Serial.print("Sending "); Serial.print(radiopacket); Serial.print(" ...");
   delay(10);
   
-  rf95.send((uint8_t *)radiopacket, 40);
+  rf95.send((uint8_t *)radiopacket, 60);
 
   delay(10);
   digitalWrite(LED, HIGH);
@@ -116,5 +113,10 @@ void loop()
   digitalWrite(LED, LOW);
 
   Serial.println("... packet sent.");
-
+  Serial.print("waiting ");
+  Serial.print(delaytime/1000.);
+  Serial.println(" sec for next sensor reading ...");
+  
+  delay(delaytime);
+  
 }
