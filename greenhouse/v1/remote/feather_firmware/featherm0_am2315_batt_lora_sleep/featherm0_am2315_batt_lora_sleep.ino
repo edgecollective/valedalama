@@ -1,10 +1,37 @@
+// Feather9x_TX
+// -*- mode: C++ -*-
+// Example sketch showing how to create a simple messaging client (transmitter)
+// with the RH_RF95 class. RH_RF95 class does not provide for addressing or
+// reliability, so you should only use RH_RF95 if you do not need the higher
+// level messaging abilities.
+// It is designed to work with the other example Feather9x_RX
+
 
 #include <SPI.h>
 #include <Wire.h>
 
+#include <RTCZero.h> //https://github.com/arduino-libraries/RTCZero
 #include <RH_RF95.h> https://learn.adafruit.com/adafruit-rfm69hcw-and-rfm96-rfm95-rfm98-lora-packet-padio-breakouts/rfm9x-test
 #include <Adafruit_AM2315.h> //https://learn.adafruit.com/am2315-encased-i2c-temperature-humidity-sensor/arduino-code
 #include <ArduinoJson.h> //https://arduinojson.org/v6/doc/installation/
+
+#define VBATPIN A7
+
+#define sensorID 12
+
+#define delaytime 3
+
+DynamicJsonDocument doc(2048);
+ 
+
+RTCZero zerortc;
+
+// Set how often alarm goes off here
+const byte alarmSeconds = 3;
+const byte alarmMinutes = 0;
+const byte alarmHours = 0;
+
+volatile bool alarmFlag = false; // Start awake
 
 Adafruit_AM2315 am2315;
 
@@ -20,12 +47,6 @@ Adafruit_AM2315 am2315;
 RH_RF95 rf95(RFM95_CS, RFM95_INT);
 
 #define LED 13
-
-#define sensorID 22
-
-#define delaytime 60000
-
-StaticJsonDocument<200> doc;
 
 
 void setup() 
@@ -77,6 +98,12 @@ void setup()
   // If you are using RFM95/96/97/98 modules which uses the PA_BOOST transmitter pin, then 
   // you can set transmitter powers from 5 to 23 dBm:
   rf95.setTxPower(23, false);
+
+  zerortc.begin(); // Set up clocks and such
+  
+  resetAlarm();  // Set alarm
+  zerortc.attachInterrupt(alarmMatch); // Set up a handler for the alarm
+  
 }
 
 int16_t packetnum = 0;  // packet counter, we increment per xmission
@@ -84,6 +111,11 @@ int16_t packetnum = 0;  // packet counter, we increment per xmission
 void loop()
 {
 
+  if (alarmFlag == true) {
+    alarmFlag = false;  // Clear flag
+    //digitalWrite(LED_BUILTIN, HIGH);
+    Serial.println("Alarm went off - I'm awake!");
+  
   float temperature, humidity;
 
   delay(2000);
@@ -94,18 +126,28 @@ void loop()
   
   delay(1000); // Wait 1 second between transmits, could also 'sleep' here!
 
-   doc["sensorID"]=sensorID;
-   doc["temp"]=temperature;
-   doc["humid"]=humidity;
-   
-  char radiopacket[60];
+
+   float measuredvbat = analogRead(VBATPIN);
+measuredvbat *= 2;    // we divided by 2, so multiply back
+measuredvbat *= 3.3;  // Multiply by 3.3V, our reference voltage
+measuredvbat /= 1024; // convert to voltage
+Serial.print("VBat: " ); Serial.println(measuredvbat);
+
+doc["deviceId"] =  sensorID;
+JsonObject fields = doc.createNestedObject("fields");
+
+   fields["temp"]=temperature;
+   fields["humid"]=humidity;
+fields["batt"]=measuredvbat;
+
+  char radiopacket[100];
   serializeJson(doc, radiopacket);
   
   //itoa(packetnum++, radiopacket+13, 10);
   Serial.print("Sending "); Serial.print(radiopacket); Serial.print(" ...");
   delay(10);
   
-  rf95.send((uint8_t *)radiopacket, 60);
+  rf95.send((uint8_t *)radiopacket, 100);
 
   delay(10);
   digitalWrite(LED, HIGH);
@@ -113,10 +155,34 @@ void loop()
   digitalWrite(LED, LOW);
 
   Serial.println("... packet sent.");
-  Serial.print("waiting ");
-  Serial.print(delaytime/1000.);
-  Serial.println(" sec for next sensor reading ...");
+  rf95.sleep();
   
-  delay(delaytime);
+  }
+
+  resetAlarm();  // Reset alarm before returning to sleep
+  Serial.println("Alarm set, going to sleep now.");
+  digitalWrite(LED_BUILTIN, LOW);
+  //delay(3000);
+  zerortc.standbyMode();    // Sleep until next alarm match
+
+}
+
+void alarmMatch(void)
+{
+  alarmFlag = true; // Set flag
+}
+
+void resetAlarm(void) {
+  byte seconds = 0;
+  byte minutes = 0;
+  byte hours = 0;
+  byte day = 1;
+  byte month = 1;
+  byte year = 1;
   
+  zerortc.setTime(hours, minutes, seconds);
+  zerortc.setDate(day, month, year);
+
+  zerortc.setAlarmTime(alarmHours, alarmMinutes, alarmSeconds);
+  zerortc.enableAlarm(zerortc.MATCH_HHMMSS);
 }
