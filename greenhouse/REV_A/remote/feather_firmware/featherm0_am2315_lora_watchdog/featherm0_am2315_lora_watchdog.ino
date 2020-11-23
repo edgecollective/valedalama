@@ -5,6 +5,7 @@
 #include <RH_RF95.h> https://learn.adafruit.com/adafruit-rfm69hcw-and-rfm96-rfm95-rfm98-lora-packet-padio-breakouts/rfm9x-test
 #include <Adafruit_AM2315.h> //https://learn.adafruit.com/am2315-encased-i2c-temperature-humidity-sensor/arduino-code
 #include <ArduinoJson.h> //https://arduinojson.org/v6/doc/installation/
+#include <Adafruit_SleepyDog.h>
 
 Adafruit_AM2315 am2315;
 
@@ -23,7 +24,7 @@ RH_RF95 rf95(RFM95_CS, RFM95_INT);
 
 #define sensorID 22
 
-#define delaytime 3000
+#define delaytime 10000
 
 StaticJsonDocument<200> doc;
 
@@ -31,10 +32,15 @@ StaticJsonDocument<200> doc;
 void setup() 
 {
 
+int countdownMS = Watchdog.enable(15000); // max 16 seconds, try 10
+
+
    if (! am2315.begin()) {
      Serial.println("Sensor not found, check wiring & pullups!");
      while (1);
   }
+
+  Serial.println("startup good!");
   
   pinMode(LED, OUTPUT);
   
@@ -77,6 +83,7 @@ void setup()
   // If you are using RFM95/96/97/98 modules which uses the PA_BOOST transmitter pin, then 
   // you can set transmitter powers from 5 to 23 dBm:
   rf95.setTxPower(23, false);
+  
 }
 
 int16_t packetnum = 0;  // packet counter, we increment per xmission
@@ -84,7 +91,9 @@ int16_t packetnum = 0;  // packet counter, we increment per xmission
 void loop()
 {
 
-  float temperature, humidity;
+    Watchdog.reset();
+
+float temperature, humidity;
 
   delay(2000);
   if (! am2315.readTemperatureAndHumidity(&temperature, &humidity)) {
