@@ -26,7 +26,6 @@ RH_RF95 rf95(RFM95_CS, RFM95_INT);
 
 #define delaytime 10000
 
-StaticJsonDocument<200> doc;
 
 
 void setup() 
@@ -102,6 +101,8 @@ float temperature, humidity;
   }
   
   delay(1000); // Wait 1 second between transmits, could also 'sleep' here!
+
+StaticJsonDocument<1024> doc;
 
    doc["sensorID"]=sensorID;
    doc["temp"]=temperature;
