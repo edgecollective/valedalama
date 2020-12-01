@@ -1,0 +1,9 @@
+//const char *SSID = "NGN12 (2.4) VZ";
+//const char *WiFiPassword = "george5656";
+//const char *SSID = "InmanSquareOasis";
+//const char *WiFiPassword = "portauprince";
+const char *SSID = "FiOS-0FV0C";
+const char *WiFiPassword = "awry0746amy657hose";
+const char* bayou_url = "http://159.65.226.222:3000/api/drives/0b15fcbcc3a7332e3bb061a7739398ffb2322f7feb9556bcc63e1879f0750ad7";
+const char* bayou_privkey = "f0d1e90b635930b295db439e18d35aef8376be9a73e7649c2935eacf6d14ee3f";
+const char* farmOS_url = "(YOUR FARMOS URL)";
