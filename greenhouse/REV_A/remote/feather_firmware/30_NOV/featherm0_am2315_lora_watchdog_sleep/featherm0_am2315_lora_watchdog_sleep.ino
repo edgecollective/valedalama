@@ -19,8 +19,11 @@
 #define watchdog_interval 16000 // milliseconds
 
 int wake_counter = 0;
-int wake_counter_max = 3;
-int sleep_interval = 2000; //milliseconds
+int sleep_interval = 5000; //milliseconds
+//int wake_counter_max = 2; // for 10 seconds
+//int wake_counter_max = 60; // for 5 minutes
+int wake_counter_max = 120; // for 10 minutes
+
 // note: total sleep time is sleep_interval*wake_counter_max
 
 // for feather m0  
